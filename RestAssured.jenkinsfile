@@ -5,7 +5,7 @@ pipeline {
         stage('checkOut') {
             steps {
                 // Get some code from a GitHub repository
-                git branch: 'main', credentialsId: 'Git', url: 'https://github.com/vinay5695/RestAssured/'
+                git branch: 'master', credentialsId: 'Git', url: 'https://github.com/vinay5695/RestAssured/'
             }
 
         }
