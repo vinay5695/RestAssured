@@ -15,6 +15,14 @@ pipeline {
                 bat 'mvn clean verify'
             }
         }
+		stage('Report'){
+		steps{
+		publishHTML (target : [allowMissing: false,
+ reportDir: 'target\cucumber-report-html\cucumber-html-reports',
+ reportFiles: 'feature-overview.html',
+ reportName: 'Cucumber-JVM Report'])
+		}
+		}
     }
             post {
         always {
