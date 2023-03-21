@@ -15,18 +15,12 @@ pipeline {
                 bat 'mvn clean verify'
             }
         }
-		stage('Report'){
-		steps{
-		publishHTML (target : [allowMissing: false,
- reportDir: 'target\cucumber-report-html\cucumber-html-reports',
- reportFiles: 'feature-overview.html',
- reportName: 'Cucumber-JVM Report'])
-		}
-		}
+		
     }
             post {
         always {
             //to send mail to recipient
+            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/cucumber-report-html/cucumber-html-reports/', reportFiles: 'feature-overview.html', reportName: 'Html Report', reportTitles: '', useWrapperFileDirectly: true])
             emailext body: 'Test Reports shared through jenkins', subject: 'Test Report', to: 'vinayagamaruthiswamy@gmail.com'
         }
         }    
