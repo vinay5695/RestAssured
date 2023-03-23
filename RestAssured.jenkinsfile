@@ -12,7 +12,7 @@ pipeline {
         stage('Build') {
             steps {
                 //To run Maven on a Windows agent, use
-                bat 'mvn clean verify -Dcucumber.options="src\test\resources\functionalTests\ReqRes.feature"'
+                bat 'mvn clean verify -Dcucumber.filter.tags="@api"'
             }
         }
 		
