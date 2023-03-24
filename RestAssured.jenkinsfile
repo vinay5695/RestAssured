@@ -11,8 +11,16 @@ pipeline {
         }
         stage('Build') {
             steps {
+                parallel (
+            "firstTask" : {
+                bat 'mvn test -Dcucumber.filter.tags="@ui" -Dcucumber.plugin="json:target/uireport/uireport.json"'
+            },
+            "secondTask" : {
+                bat 'mvn test -Dcucumber.filter.tags="@api" -Dcucumber.plugin="json:target/apireport/apireport.json"' 
+            }
+        )
                 //To run Maven on a Windows agent, use
-                bat 'mvn clean verify -Dcucumber.filter.tags="@ui"'
+                
             }
         }
 		
@@ -20,7 +28,8 @@ pipeline {
             post {
         always {
             //to send mail to recipient
-            publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'target/cucumber-report-html/cucumber-html-reports/', reportFiles: 'feature-overview.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
+            cucumber buildStatus: 'null', customCssFiles: '', customJsFiles: '', failedFeaturesNumber: -1, failedScenariosNumber: -1, failedStepsNumber: -1, fileIncludePattern: '**/*.json', pendingStepsNumber: -1, skippedStepsNumber: -1, sortingMethod: 'ALPHABETICAL', undefinedStepsNumber: -1
+            //publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'target/cucumber-report-html/cucumber-html-reports/', reportFiles: 'feature-overview.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
             emailext body: 'Test Reports shared through jenkins', subject: 'Test Report', to: 'vinayagamaruthiswamy@gmail.com'
         }
         }    
