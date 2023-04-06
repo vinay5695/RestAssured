@@ -99,10 +99,13 @@ public class DemoqaUiTest {
 		loginpage.clickJse(driver, loginpage.logout);
 	}
 
-    @After("@Demoqa")
+    @After("@ui")
     public void closes()
     {
+    	if(driver!=null)
+    	{
     	driver.close();
+    	}
     }
 
 

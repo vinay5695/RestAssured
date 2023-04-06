@@ -92,10 +92,13 @@ OrderSauce osauce =new OrderSauce();;
 
 
 
-	@After("@sauce")
+	@After("@ui")
 	public void closes()
 	{
+		if(driver!=null)
+		{
 		driver.close();
+		}
 	}
 
 

@@ -102,10 +102,13 @@ public class BankingTest {
 	   bank.clickBtn(driver, bank.home);
 	}	
 
-	@After("@banking")
-	public void closeb()
+	@After("@ui")
+	public void closes()
 	{
+		if(driver!=null)
+		{
 		driver.close();
+		}
 	}
 
 }

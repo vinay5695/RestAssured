@@ -72,10 +72,13 @@ KatalonPage katalon=new KatalonPage();
 	    katalon.clickBtn(driver, katalon.logout);
 	}
 
-	@After("@katalon")
-	public void closeb()
+	@After("@ui")
+	public void closes()
 	{
+		if(driver!=null)
+		{
 		driver.close();
+		}
 	}
 
 

@@ -1,4 +1,4 @@
-@banking
+@ui
 Feature: Test the functionality of banking domain
 
   Scenario: Test the banking operations in customer login

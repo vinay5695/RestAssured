@@ -1,4 +1,4 @@
-@json
+@ui
 Feature: Test the Json Place Holder UI
 
   

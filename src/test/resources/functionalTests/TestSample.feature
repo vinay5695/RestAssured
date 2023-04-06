@@ -1,3 +1,4 @@
+@api
 Feature: Test functionality of Employee Api
 For sample testing we should check the functionality of Employee api
 

@@ -94,10 +94,13 @@ JsonPlaceHolder json=new JsonPlaceHolder();
 
 
 
-	@After("@json")
+	@After("@ui")
 	public void closes()
 	{
+		if(driver!=null)
+		{
 		driver.close();
+		}
 	}
 
 }

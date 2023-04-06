@@ -1,6 +1,7 @@
 package pom;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
 public class KatalonPage extends BaseAction{
 	
@@ -19,4 +20,9 @@ public class KatalonPage extends BaseAction{
 	public By confirmation=By.xpath("//div[@class='col-xs-12 text-center']/h2");
 	public By logoutmenu=By.xpath("//i[@class='fa fa-bars']");
 	public By logout=By.linkText("Logout");
+	
+	public void typeText(WebDriver driver,By  by, String text) {
+		 driver.findElement(username).sendKeys(text);		
+		}
+	
 }

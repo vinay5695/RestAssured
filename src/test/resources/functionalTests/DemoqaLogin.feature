@@ -1,4 +1,4 @@
-@Demoqa
+@ui
 Feature: Test the Demoqa UI Login and order book
 
   #Scenario: Register the Demoqa application

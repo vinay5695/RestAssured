@@ -1,4 +1,4 @@
-@katalon
+@ui
 Feature: Book an appointment in katalon heroku UI
 
   Background: Login the katalon application

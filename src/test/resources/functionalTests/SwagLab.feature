@@ -1,3 +1,4 @@
+@ui
 Feature: Test the SwagLab UI
 
   Background: Login the swaglab sauce
@@ -6,37 +7,37 @@ Feature: Test the SwagLab UI
       | standard_user | secret_sauce |
     Then log in succuessfully
 
-  @sauce
+  
   Scenario: order a product
     When I click add to cart of backpack
     And I checkout the product
     Then I validate the product order and logged out
 
-  @sauce
+  
   Scenario: order a product
     When I click add to cart of bikelight
     And I checkout the product
     Then I validate the product order and logged out
 
-  @sauce
+  
   Scenario: order a product
     When I click add to cart of tshirt
     And I checkout the product
     Then I validate the product order and logged out
 
-  @sauce
+  
   Scenario: order a product
     When I click add to cart of jacket
     And I checkout the product
     Then I validate the product order and logged out
 
-  @sauce
+  
   Scenario: order a product
     When I click add to cart of onesie
     And I checkout the product
     Then I validate the product order and logged out
 
-  @sauce
+  
   Scenario: order a product
     When I click add to cart of redtshirt
     And I checkout the product
