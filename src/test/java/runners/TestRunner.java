@@ -10,9 +10,9 @@ import io.cucumber.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		features ="src/test/resources/functionalTests",
-		glue= {"stepDefinitons"},
+		glue= {"stepDefinitons"}
 //		dryRun=true,
-			plugin = {"json:target/cucumber.json"}
+//			plugin = {"json:target/cucumber.json"}
 //			tags="@banking"
 //		"io.qameta.allure.cucumber4jvm.AllureCucumber4Jvm"
 		)
