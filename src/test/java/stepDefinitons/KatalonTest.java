@@ -19,7 +19,7 @@ public class KatalonTest {
 WebDriver driver;
 KatalonPage katalon=new KatalonPage();
 	@Given("I enter the katalon url of the login")
-	public void i_enter_the_demoqa_url_of_the_login() {
+	public void i_enter_the_katalon_url_of_the_login() {
 		ChromeOptions options=new ChromeOptions();
 		options.addArguments("--remote-allow-origins=*");
 		//options.addArguments("headless");

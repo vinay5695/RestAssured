@@ -12,8 +12,8 @@ import io.cucumber.junit.Cucumber;
 		features ="src/test/resources/functionalTests",
 		glue= {"stepDefinitons"}
 //		dryRun=true,
-//			plugin = {"json:target/cucumber.json"}
-//			tags="@banking"
+//	plugin = {"json:target/cucumber.json"},
+//			tags="@ui"
 //		"io.qameta.allure.cucumber4jvm.AllureCucumber4Jvm"
 		)
 public class TestRunner {

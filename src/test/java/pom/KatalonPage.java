@@ -21,8 +21,4 @@ public class KatalonPage extends BaseAction{
 	public By logoutmenu=By.xpath("//i[@class='fa fa-bars']");
 	public By logout=By.linkText("Logout");
 	
-	public void typeText(WebDriver driver,By  by, String text) {
-		 driver.findElement(username).sendKeys(text);		
-		}
-	
 }
