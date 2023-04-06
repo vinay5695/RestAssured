@@ -15,6 +15,7 @@ public class Tests {
 	private static final String baseUrl =configReader.getInstance().getBaseUrl();
 	private RequestSpecification reqspec;
 	private Response response;
+	private String token;
 
 	@Given("Give the domain name of Employee")
 	public void give_the_domain_name_of_Employee() {	
